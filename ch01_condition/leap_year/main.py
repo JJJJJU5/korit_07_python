@@ -15,11 +15,6 @@ if year % 4 == 0 :
         print(f'{year}년도 윤년이 아닙니다.')
 else:
     print(f'{year}년도 윤년이 아닙니다.')
-
-
-
-
-
 '''
 중첩 if문을 사용한 풀이 방식
 

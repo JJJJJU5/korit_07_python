@@ -39,13 +39,19 @@ a[ 시작인덱스 : 종료인덱스 : 증강값 ]
 맨 마지막 숫자는 5이며, 홀수입니다. -> 조건문 사용.
 '''
 
-num = input("네 자리 숫자를 입력하세요 >>>")
-last_nuber = int(num[-1])
-result = ""
-if last_nuber % 2 == 0:
-    result ="짝수입니다."
-else:
-    result ="홀수입니다."
-print(f'맨 마지막 숫자는{last_nuber}입니다.')
-print(f'맨 마지막 숫자는{last_nuber}이며,{result}.')
+# num = input("네 자리 숫자를 입력하세요 >>>")
+# last_nuber = int(num[-1])
+# result = ""
+# if last_nuber % 2 == 0:
+#     result ="짝수입니다."
+# else:
+#     result ="홀수입니다."
+# print(f'맨 마지막 숫자는{last_nuber}입니다.')
+# print(f'맨 마지막 숫자는{last_nuber}이며,{result}.')
 
+num2 = input("네 자리 숫자를 입력하세요 >>>")
+print(f'맨마지막 숫자는 {num2[-1]}')
+if int(num2[-1]) % 2 == 0:
+    print(f'맨 마지막 숫자는 {num2[-1]}이며 짝수입니다.')
+else:
+    print(f'맨 마지막 숫자는 {num2[-1]}이며 홀수입니다.')
