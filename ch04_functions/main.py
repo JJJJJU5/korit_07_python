@@ -62,23 +62,23 @@ print() / type() / int() / float() / input()
 def call1():
     print('[ x | x ]')
 # 매개변수 o / 리턴 x
-def call2(unknown_parameter):
-    print('[ o | x ]')
-    print(f'{unknown_parameter}라고 입력함')
-def call3():
-    print('[ x | o ]')
-    return 1
-def call4(unknown1 , unknown2):
-    print('[ o | o ]')
-    return unknown1 + unknown2
-call1()
-call2("날씨")
-call2(1234)
-call3() # 결과값 : [ x | o ] 만 나옴
-print(call3())
-# 결과값 1
-print(call4("ㅎㅇ","ㅇㅇ"))
-print(call4(unknown2=1234, unknown1=456))
+# def call2(unknown_parameter):
+#     print('[ o | x ]')
+#     print(f'{unknown_parameter}라고 입력함')
+# def call3():
+#     print('[ x | o ]')
+#     return 1
+# def call4(unknown1 , unknown2):
+#     print('[ o | o ]')
+#     return unknown1 + unknown2
+# call1()
+# call2("날씨")
+# call2(1234)
+# call3() # 결과값 : [ x | o ] 만 나옴
+# print(call3())
+# # 결과값 1
+# print(call4("ㅎㅇ","ㅇㅇ"))
+# print(call4(unknown2=1234, unknown1=456))
 
 
 '''
