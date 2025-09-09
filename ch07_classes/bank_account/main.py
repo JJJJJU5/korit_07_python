@@ -40,73 +40,73 @@
 현재 잔액 : 600000원                 (육십만원)
 '''
 
-class BankAccount:
-    # AllArgsConstructor 정의
-    def __init__(self, owner, account_num, balance):
-        self.owner = owner
-        self.account_num = account_num
-        self.balance = balance
-
-    # getter / setter 정의
-    def get_account_holder(self):
-        return self.owner
-
-    def set_account_holder(self, owner):
-        self.owner = owner
-
-    # deposit() / withdraw() 정의 -> call1() ~ call4() 중에 뭘로 정의할지 / 내부 로직을 어떻게 구현할지 고민해야 하는 method들입니다.
-    def deposit(self, amount):
-        if amount <= 0:
-            print('불가능한 입금 금액입니다.')
-            return
-        self.balance += amount
-        print(f'{amount}원이 입금되었습니다. 현재 잔액 : {self.balance}')
-
-    def withdraw(self, amount):
-        if amount <= 0:                       # 조건문 # 1 예를 들어 -500000을 argument로 넣었다고 가정합시다.
-            print('불가능한 출금 금액입니다.')
-            return
-        if self.balance - amount < 0:               # 조건문 # 2
-            print('잔액이 부족하여 출금할 수 없습니다.')
-            return
-        self.balance -= amount
-        print(f'{amount} 원이 출금되었습니다. 현재 잔액 : {self.balance}')
-
-        # if amount <= 0:                                 #  조건문 # 1
-        #     print('불가능한 출금 금액입니다.')
-        # else :
-        #     if self.balance - amount < 0 :
-        #         print('잔액이 부족하여 출금할 수 없습니다.')
-        #     else :
-        #         self.balance -= amount
-        #         print(f'{amount} 원이 출금되었습니다. 현재 잔액 : {self.balance}')
-
-    def print_account_info(self):
-        print(f'계좌 소유자 : {self.owner}')
-        print(f'계좌 번호 : {self.account_num}')
-        print(f'현재 잔액 : {self.balance}')
-
-
-# 객체 생성을 어떻게 해야할지
-# 입금 성공 / 실패 - 출금 성공 / 실패 등의 실행 예를 어떻게 구현할지 고민
-account1 = BankAccount('홍길동', '123-456-789', 100000)
-account2 = BankAccount('신사임당', '987-654-321', 500000)
-
-account1.print_account_info()
-print()
-account2.print_account_info()
-
-# account1.deposit(-10)             deposit() 실패 사례 테스트 코드
-# account1.withdraw(-1100)            withdraw() 실패 사례 테스트 코드 # 1
-# account1.withdraw(100000000)        withdraw() 실패 사례 테스트 코드 # 2
-print()
-account1.deposit(50000)
-account1.withdraw(200000)
-account1.withdraw(100000)
-print()
-account2.withdraw(100000)
-account2.deposit(200000)
-print()
-account1.print_account_info()
-print()
-account2.print_account_info()
+# class BankAccount:
+#     # AllArgsConstructor 정의
+#     def __init__(self, owner, account_num, balance):
+#         self.owner = owner
+#         self.account_num = account_num
+#         self.balance = balance
+#
+#     # getter / setter 정의
+#     def get_account_holder(self):
+#         return self.owner
+#
+#     def set_account_holder(self, owner):
+#         self.owner = owner
+#
+#     # deposit() / withdraw() 정의 -> call1() ~ call4() 중에 뭘로 정의할지 / 내부 로직을 어떻게 구현할지 고민해야 하는 method들입니다.
+#     def deposit(self, amount):
+#         if amount <= 0:
+#             print('불가능한 입금 금액입니다.')
+#             return
+#         self.balance += amount
+#         print(f'{amount}원이 입금되었습니다. 현재 잔액 : {self.balance}')
+#
+#     def withdraw(self, amount):
+#         if amount <= 0:                       # 조건문 # 1 예를 들어 -500000을 argument로 넣었다고 가정합시다.
+#             print('불가능한 출금 금액입니다.')
+#             return
+#         if self.balance - amount < 0:               # 조건문 # 2
+#             print('잔액이 부족하여 출금할 수 없습니다.')
+#             return
+#         self.balance -= amount
+#         print(f'{amount} 원이 출금되었습니다. 현재 잔액 : {self.balance}')
+#
+#         # if amount <= 0:                                 #  조건문 # 1
+#         #     print('불가능한 출금 금액입니다.')
+#         # else :
+#         #     if self.balance - amount < 0 :
+#         #         print('잔액이 부족하여 출금할 수 없습니다.')
+#         #     else :
+#         #         self.balance -= amount
+#         #         print(f'{amount} 원이 출금되었습니다. 현재 잔액 : {self.balance}')
+#
+#     def print_account_info(self):
+#         print(f'계좌 소유자 : {self.owner}')
+#         print(f'계좌 번호 : {self.account_num}')
+#         print(f'현재 잔액 : {self.balance}')
+#
+#
+# # 객체 생성을 어떻게 해야할지
+# # 입금 성공 / 실패 - 출금 성공 / 실패 등의 실행 예를 어떻게 구현할지 고민
+# account1 = BankAccount('홍길동', '123-456-789', 100000)
+# account2 = BankAccount('신사임당', '987-654-321', 500000)
+#
+# account1.print_account_info()
+# print()
+# account2.print_account_info()
+#
+# # account1.deposit(-10)             deposit() 실패 사례 테스트 코드
+# # account1.withdraw(-1100)            withdraw() 실패 사례 테스트 코드 # 1
+# # account1.withdraw(100000000)        withdraw() 실패 사례 테스트 코드 # 2
+# print()
+# account1.deposit(50000)
+# account1.withdraw(200000)
+# account1.withdraw(100000)
+# print()
+# account2.withdraw(100000)
+# account2.deposit(200000)
+# print()
+# account1.print_account_info()
+# print()
+# account2.print_account_info()
