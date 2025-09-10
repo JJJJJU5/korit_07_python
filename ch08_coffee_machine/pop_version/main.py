@@ -26,8 +26,7 @@ MENU = {
         '가격' : 3.0,
     },
 }
-# 실행 예
-# 카푸치노에 우유 100ml가 들어갑니다.
+# 실행 예ㅇ
 # 라고 콘솔 출력할 수 있도록 카푸치노의 우유량을 추출하는 코드를 작성하시오.
 
 # 에스프레소의 가격을 추출하시오.
@@ -49,7 +48,6 @@ water = 0
 milk = 0
 # for key in MENU:
 #     for key_key in MENU[key]['재료']:
-#         print(MENU[key]['재료'][key_key])
 #         if key_key == '커피':
 #             coffee += MENU[key]['재료'][key_key]
 #         elif key_key == '물':
