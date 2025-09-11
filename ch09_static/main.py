@@ -188,21 +188,37 @@ print(f'매출 : {Shop.get_total()}원')
 class Shop:
     total = 0
     menu_list = [{'떡볶이' : 3000 } , {'순대' : 4000 },{'튀김' : 500} , {'김밥' : 2000}]
+    menu_dict = {
+        '떡볶이' : 3000,
+        '순대': 4000,
+        '튀김': 500,
+        '김밥': 2000,
+    }
 
     @classmethod
     def sales(cls, name,ea):
         for key in cls.menu_list:
-            if name in key.keys():
-                print(key[name])
+            if name in key.keys():            # 딕셔너리 내에 pair 하나 밖에 없는 상태인데 있으면 이하의 코드라인이 실행되고 아니면 넘어간다.
+                #in -> element를 기준으로 해야 하기 때문에 dictionary의 element 중 'key'를 기준
+                # 애초에 key 없으면 value를 조회 못하는게 dictionary의 특징 중 하나
                 cls.total += key[name] * ea
                 print(f'{name} {ea} 개 판매완료: {key[name] * ea}')
+
+    @classmethod
+    def sales2(cls, name,ea):
+            if name in cls.menu_dict:
+                cls.total += cls.menu_dict[name] * ea
+                print(f'{name} {ea}개 판매완료: {cls.menu_dict[name] * ea}')
 
     @classmethod
     def get_total(cls):
         return cls.total
 
 Shop.sales('떡볶이',1)
-# Shop.sales('김밥',5)
-# Shop.sales('튀김',1)
+Shop.sales('김밥',5)
+Shop.sales('튀김',1)
+Shop.sales2('김밥',5)
+Shop.sales2('떡볶이',5)
+Shop.sales2('순대',5)
 
-# print(f'매출: {Shop.get_total()}')
+print(f'매출: {Shop.get_total()}')
